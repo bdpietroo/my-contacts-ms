@@ -1,0 +1,10 @@
+Flask
+python-dotenv
+requests
+requests-oauthlib
+Flask-Cors
+Flask-Session
+msal
+
+# prod
+gunicorn
