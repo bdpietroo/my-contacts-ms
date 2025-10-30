@@ -9,7 +9,7 @@ const messages = {
     },
     contacts: {
       header: 'Bem-vindo à sua área de contatos',
-      subtitle: 'Contatos',
+      subtitle: 'Lista de contatos',
       loading: 'Carregando seus contatos...',
       error: 'Falha ao carregar contatos. Tente fazer o login novamente.',
       no_contacts: 'Nenhum contato encontrado ou a lista de contatos está vazia.',
@@ -26,7 +26,7 @@ const messages = {
     },
     contacts: {
       header: 'Welcome to your contacts area',
-      subtitle: 'Contacts',
+      subtitle: 'List of contacts',
       loading: 'Loading your contacts...',
       error: 'Failed to load contacts. Try signing in again.',
       no_contacts: 'No contacts found or the contact list is empty.',

@@ -1,10 +1,15 @@
 <template>
-  <div class="dashboard-container">
+  <body id="bodyContacts" class="bg-blue">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand small">
+          <img class="logo" src="favicon.png" alt="">
+          <div class="title">{{ $t('contacts.header') }}</div>
+        </div>
 
-    <header class="app-header">
-      <div class="header-content">
-        <h1 class="app-title">{{ $t('contacts.header') }}</h1>
-        <a :href="logoutUrl" class="logout-button">{{ $t('contacts.logout') }}</a>
+        <div class="user-actions">
+          <a :href="logoutUrl" class="btn ghost">{{ $t('contacts.logout') }}</a>
+        </div>
       </div>
     </header>
 
@@ -25,7 +30,22 @@
       />
     </main>
 
+      <!-- Footer waves -->
+  <div class="waves-wrapper small">
+    <svg class="waves" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden>
+      <g class="wave-group" opacity="0.6">
+        <path class="wave wave1" d="M0,120 C150,200 350,20 600,100 C850,180 1050,40 1200,120 L1200,240 L0,240 Z"></path>
+      </g>
+      <g class="wave-group" opacity="0.4">
+        <path class="wave wave2" d="M0,140 C200,60 400,240 600,160 C800,80 1000,220 1200,140 L1200,240 L0,240 Z"></path>
+      </g>
+      <g class="wave-group" opacity="0.25">
+        <path class="wave wave3" d="M0,100 C170,20 370,220 600,120 C830,20 1030,200 1200,100 L1200,240 L0,240 Z"></path>
+      </g>
+    </svg>
   </div>
+  </body>
+
 </template>
 
 <script>
@@ -77,76 +97,33 @@ export default {
 };
 </script>
 
-<style scoped>
-
-html, body {
-  margin: 0;
-  padding: 0;
+<style>
+#bodyContacts {
   height: 100%;
-  background-color: transparent;
+  background: var(--primary-1);
 }
 
-#app {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --primary-1: #0fc6e5;
+  --bg:#0fc6e5; /* bright cyan background behind card */
+  --card:#f5fbfd; /* card pale */
+  --accent:#20b6d6;
+  --accent-dark:#0ea6c3;
+  --muted:#9bbec7;
+  --shadow: rgba(10, 40, 60, 0.18);
+  --glass: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,250,252,0.95));
+  --text:#1d4551;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 16px;
 }
 </style>
 
 <style scoped>
 
-.dashboard-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #c7ddf1, #c2e4ff, #85c3f5);
-  font-family: 'Roboto', sans-serif;
-}
-
-.app-header {
-  background-color: #85c3f5;
-  color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.app-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-}
-
-
-.logout-button {
-  background-color: #ffffff;
-  color: #1e88e5;
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.logout-button:hover {
-  background-color: #f5f5f5;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-}
-
-.logout-button:active {
-  background-color: #eeeeee;
+p {
+  font-weight: 800;
 }
 
 .dashboard-card {
@@ -164,39 +141,11 @@ html, body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.user-greeting {
-  color: #1e88e5;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.05rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
 .loading-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #757575;
-}
-
-.loader {
-  border: 4px solid #e0e0e0;
-  border-top: 4px solid #1e88e5;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 10px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .error-state {
@@ -208,27 +157,176 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 600px) {
-  .app-header {
-    padding: 0.8rem 1.2rem;
-  }
-
-  .app-title {
-    font-size: 1.2rem;
-  }
-
-  .logout-button {
-    padding: 6px 14px;
-    font-size: 0.9rem;
-  }
-
-  .dashboard-card {
-    margin: 2rem 1rem;
-    padding: 2rem 1.5rem;
-  }
-
-  .user-greeting {
-    font-size: 1.4rem;
-  }
+.bg-blue {
+  background: linear-gradient(180deg, rgba(11, 175, 204, 1) 0%, rgba(7, 185, 208, 1) 100%);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.bg-blue {
+  background: linear-gradient(180deg, rgba(11, 175, 204, 1) 0%, rgba(7, 185, 208, 1) 100%);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 6px;
+
+}
+.brand .logo {
+  width:64px;
+  height:64px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:28px;
+  box-shadow: 0 8px 18px rgba(2,120,150,0.18);
+}
+.brand h1{
+  font-weight:600;
+  color:var(--accent-dark);
+  font-size:18px;
+}
+
+/* Button */
+.btn { 
+  border:0; 
+  padding:12px 20px; 
+  border-radius:8px; 
+  cursor:pointer; 
+  font-weight:600; 
+  display:inline-flex; 
+  align-items:center; 
+  gap:10px; 
+}
+
+.btn.ghost{
+  background:transparent; 
+  border:1px solid rgba(255,255,255,0.2); 
+  color:white; 
+  padding:8px 12px;
+}
+
+/* Waves */
+.waves-wrapper {
+  width:100%;
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  height:160px;
+  z-index:5;
+  pointer-events:none;
+}
+.waves-wrapper.small { 
+  bottom: -6px;
+  height:120px; 
+}
+
+.waves{ 
+  width:100%;
+  height:100%;
+  display:block; 
+}
+
+/* animation for each wave path - subtle horizontal shift */
+.wave {
+  transform-origin: center;
+  will-change: transform;
+}
+.wave1 { fill: rgba(8,173,201,0.95); animation: slide1 9s linear infinite; }
+.wave2 { fill: rgba(5,152,188,0.90); animation: slide2 12s linear infinite; }
+.wave3 { fill: rgba(0,126,160,0.9); animation: slide3 7s linear infinite; }
+
+@keyframes slide1 {
+  0% { transform: translateX(0px) translateY(0); }
+  50% { transform: translateX(-40px) translateY(-6px) rotate(-0.2deg); }
+  100% { transform: translateX(0px) translateY(0); }
+}
+@keyframes slide2 {
+  0% { transform: translateX(0px) translateY(0); }
+  50% { transform: translateX(-80px) translateY(-8px) rotate(0.1deg); }
+  100% { transform: translateX(0px) translateY(0); }
+}
+@keyframes slide3 {
+  0% { transform: translateX(0px) translateY(0); }
+  50% { transform: translateX(-20px) translateY(-4px) rotate(0.15deg); }
+  100% { transform: translateX(0px) translateY(0); }
+}
+
+/* Topbar for dashboard */
+.topbar {
+  position: fixed;
+  left:0;
+  right:0; 
+  top:18px;
+  display:flex;
+  justify-content:center;
+  z-index:12;
+  pointer-events:none;
+}
+
+.topbar-inner {
+  width:100%;
+  max-width:1100px;
+  pointer-events:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding: 10px 16px;
+}
+
+.brand.small { 
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white; 
+}
+
+.brand.small .logo {
+  width:40px;
+  height:40px;
+  font-size:20px;
+  box-shadow:none;
+}
+
+.title { 
+  font-weight:600;
+  color:white; 
+}
+
+.user-actions { 
+  display:flex; 
+  align-items:center; 
+  gap:12px; 
+  color:white; 
+}
+
+.dashboard-card {
+  width:100%; 
+  max-width:920px; 
+  background: rgba(255,255,255,0.96); 
+  border-radius:8px; padding: 30px;
+  box-shadow: 0 18px 30px rgba(2,60,80,0.12);
+  border:1px solid rgba(10,60,80,0.03);
+}
+
+/* responsive */
+@media (max-width:880px){
+  .card{ padding:28px; }
+  .login-card{ padding-bottom:140px; }
+  .data-table{ min-width:600px; }
+}
+
+
 </style>

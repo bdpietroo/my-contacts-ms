@@ -1,5 +1,6 @@
-<template>  
-    <div class="card" id="loginCard">
+<template>
+  <body id="bodyLogin">
+        <div class="card" id="loginCard">
       <div class="card-content">
         <h1>{{ $t('login.title') }}</h1>
         <p>{{ $t('login.description') }}</p>
@@ -28,6 +29,8 @@
         </svg>
       </div>
     </div>
+  </body>
+
 </template>
 
 
@@ -56,7 +59,7 @@ export default {
   html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
 
 
-body {
+#bodyLogin {
   margin: 0;
   height: 100vh;
   display: flex;
