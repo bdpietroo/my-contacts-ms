@@ -81,7 +81,7 @@ export default {
 }
 
 .contacts-table th {
-  background-color: #0ea6c3; /* azul Material */
+  background-color: #0ea6c3; 
   color: white;
   font-weight: 500;
   text-align: center; /* títulos centralizados */
@@ -97,7 +97,7 @@ export default {
 }
 
 .contacts-table tr:hover {
-  background-color: #e3f2fd; /* hover azul claro */
+  background-color: #e3f2fd;
 }
 
 .contacts-table td {

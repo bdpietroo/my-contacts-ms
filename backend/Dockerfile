@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 8080
 
 # O comando para iniciar a aplicação quando o contêiner for executado.
-# Usamos Gunicorn, um servidor WSGI robusto para produção.
+# Usa Gunicorn, um servidor WSGI para produção.
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "run:app"]

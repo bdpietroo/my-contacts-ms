@@ -6,6 +6,7 @@
           <img class="logo" src="favicon.png" alt="">
           <div class="title">{{ $t('contacts.header') }}</div>
         </div>
+        
         <div class="user-actions">
           <a :href="logoutUrl" class="btn ghost">{{ $t('contacts.logout') }}</a>
         </div>
@@ -29,7 +30,6 @@
       />
     </main>
 
-      <!-- Footer waves -->
   <div class="waves-wrapper small">
     <svg class="waves" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden>
       <g class="wave-group" opacity="0.6">
@@ -81,7 +81,6 @@ export default {
         const apiUrl = `${API_BASE_URL}/api/contacts`;
         const response = await axios.get(apiUrl, { withCredentials: true });
         
-        // A resposta da API (response.data) já é o objeto de contatos que queremos.
         this.contactsData = response.data;
 
       } catch (err) {
@@ -102,12 +101,15 @@ export default {
   background: var(--primary-1);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0; }
 
 :root{
   --primary-1: #0fc6e5;
-  --bg:#0fc6e5; /* bright cyan background behind card */
-  --card:#f5fbfd; /* card pale */
+  --bg:#0fc6e5;
+  --card:#f5fbfd; 
   --accent:#20b6d6;
   --accent-dark:#0ea6c3;
   --muted:#9bbec7;
@@ -197,7 +199,6 @@ p {
   font-size:18px;
 }
 
-/* Button */
 .btn { 
   border:0; 
   padding:12px 20px; 
@@ -216,7 +217,6 @@ p {
   padding:8px 12px;
 }
 
-/* Waves */
 .waves-wrapper {
   width:100%;
   position:absolute;
@@ -237,7 +237,6 @@ p {
   display:block; 
 }
 
-/* animation for each wave path - subtle horizontal shift */
 .wave {
   transform-origin: center;
   will-change: transform;
@@ -262,7 +261,6 @@ p {
   100% { transform: translateX(0px) translateY(0); }
 }
 
-/* Topbar for dashboard */
 .topbar {
   position: fixed;
   left:0;
@@ -320,7 +318,6 @@ p {
   border:1px solid rgba(10,60,80,0.03);
 }
 
-/* responsive */
 @media (max-width:880px){
   .card{ padding:28px; }
   .login-card{ padding-bottom:140px; }

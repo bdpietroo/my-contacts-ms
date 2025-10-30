@@ -15,8 +15,7 @@ export default {
 
 <style>
 /* 
-  Estilos globais para a aplicação podem ser colocados aqui.
-  Vamos adicionar um estilo básico para centralizar o conteúdo.
+  Estilos globais
 */
 #app {
   height: 100%;

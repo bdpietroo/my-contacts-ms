@@ -73,7 +73,6 @@ export default {
 
 <style scoped>
 
-/* CARD */
 .card {
   position: relative;
   width: var(--card-w);
@@ -100,9 +99,6 @@ export default {
   margin-bottom: 24px;
 }
 
-
-
-/* BOTÃO */
 .login-button {
   display: inline-flex;
   align-items: center;
@@ -127,10 +123,8 @@ export default {
   height: 24px;
 }
 
-/* Wrapper do conteúdo do card (para garantir z-index acima das ondas) */
 .card-content{ position:relative; z-index:12; }
 
-/* Alinhar as ondas sob o cartão, centralizadas como na primeira imagem */
 .waves-wrapper{
   position:absolute;
   left: 50%;
@@ -163,8 +157,6 @@ export default {
   50%{ transform: translateY(8px); }
 }
 
-
-/* RESPONSIVO */
 @media (max-width: 540px) {
   :root { --card-w: 92vw; }
   .card { padding: 36px 20px 110px; width: 92vw; }
