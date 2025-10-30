@@ -3,15 +3,15 @@
 
     <div class="login-container">
       <div class="login-card">
-        <h2>Faça login para começar</h2>
-        <p>Visualize todos os seus contatos ativos da Microsoft de forma simples e intuitiva.</p>
+      <h2>{{ $t('login.title') }}</h2>
+        <p>{{ $t('login.description') }}</p>
 
         <a :href="loginUrl" class="login-button">
           <img
             src="https://docs.microsoft.com/en-us/azure/active-directory/develop/media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.svg"
             alt="Microsoft Logo"
           />
-          Entrar com a Microsoft
+          {{ $t('login.button') }}
         </a>
       </div>
     </div>

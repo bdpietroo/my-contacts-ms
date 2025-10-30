@@ -3,21 +3,20 @@
 
     <header class="app-header">
       <div class="header-content">
-        <h1 class="app-title">Bem-vindo à sua área de contatos</h1>
-        <a :href="logoutUrl" class="logout-button">Sair</a>
+        <h1 class="app-title">{{ $t('contacts.header') }}</h1>
+        <a :href="logoutUrl" class="logout-button">{{ $t('contacts.logout') }}</a>
       </div>
     </header>
 
     <main class="dashboard-card">
-       <h3 class="subtitle">Contatos</h3>
+       <p>{{ $t('contacts.subtitle') }}</p>
 
       <div v-if="loading" class="loading-state">
-        <div class="loader"></div>
-        <p>Carregando seus contatos...</p>
+        <p>{{ $t('contacts.loading') }}</p>
       </div>
 
       <div v-if="error" class="error-state">
-        <p>{{ error }}</p>
+        <p>{{ error || $t('contacts.error') }}</p>
       </div>
 
       <ContactsTable
@@ -67,7 +66,7 @@ export default {
         this.contactsData = response.data;
 
       } catch (err) {
-        this.error = 'Falha ao carregar contatos. Tente fazer o login novamente.';
+        this.error = null;
         console.error("Erro ao buscar contatos:", err);
 
       } finally {
