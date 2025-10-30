@@ -5,8 +5,8 @@
     <table v-if="Object.keys(contacts).length > 0" class="contacts-table">
       <thead>
         <tr>
-          <th>Domínio</th>
-          <th>E-mails</th>
+          <th>{{ $t('contacts.domain') }}</th>
+          <th>{{ $t('contacts.emails') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +28,7 @@
     </table>
     <!-- Mensagem exibida quando não há contatos -->
     <div v-else>
-      <p>Nenhum contato encontrado ou a lista de contatos está vazia.</p>
+      <p>{{ $t('contacts.no_contacts') }}</p>
     </div>
   </div>
 </template>
