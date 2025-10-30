@@ -33,26 +33,28 @@ Para que a autenticação com a Microsoft funcione, você precisa registrar sua 
 
 1.  **Acesse o Portal do Azure:** Faça login em [portal.azure.com](https://portal.azure.com).
 
-2.  **Vá para "Registos de aplicações":** Na barra de busca, procure por `Microsoft Entra ID` (o nome antigo era Azure Active Directory), clique no serviço e, no menu à esquerda, vá para **"Registos de aplicações"** (ou `App registrations`).
+2.  **Vá para "Começar com uma avaliação gratuita do Azure":** clique em `Iniciar` e depois clique `Try Azure for free` e crie sua conta. 
 
-3.  **Crie um Novo Registo:** Clique em **"+ Novo registo"**.
+3.  **Vá para "Registos de aplicativos":** Na barra de busca, procure por `Microsoft Entra ID`, clique no serviço e, no menu à esquerda, em gerenciar, clique em **"Registos de aplicativo"**.
+
+4.  **Crie um Novo Registo:** Clique em **"+ Novo registo"**.
     *   **Nome:** Dê um nome claro, como `Meus Contatos MS (Local)`.
     *   **Tipos de conta suportados:** Selecione a opção *"Contas em qualquer diretório organizacional... e contas Microsoft pessoais..."*.
 
-4.  **Configure o URI de Redirecionamento (Passo Crítico):**
+5.  **Configure o URI de Redirecionamento (Passo Crítico):**
     *   Na seção "URI de Redirecionamento", selecione a plataforma **"Web"**.
     *   Insira a URL de callback para o ambiente local: `http://localhost:5000/get_token`.
     *   Clique em **"Registar"**.
 
-5.  **Copie o "ID da Aplicação (cliente)" (Client ID):** Na página de "Visão Geral" da aplicação, copie o valor do campo **"ID da Aplicação (cliente)"**. Este será o seu `CLIENT_ID`.
+6.  **Copie o "ID da Aplicação (cliente)" (Client ID):** Na página de "Visão Geral" da aplicação, copie o valor do campo **"ID da Aplicação (cliente)"**. Este será o seu `CLIENT_ID`. Recomendo anotar em alum lugar.
 
-6.  **Crie o "Segredo do Cliente" (Client Secret):**
+7.  **Crie o "Segredo do Cliente" (Client Secret):**
     *   No menu à esquerda, vá para **"Certificados e segredos"**.
     *   Clique em **"+ Novo segredo do cliente"**.
     *   Dê uma descrição (ex: `chave_app_contatos`) e clique em "Adicionar".
-    *   **ATENÇÃO:** A página irá recarregar e mostrar o segredo. Copie o **VALOR** do segredo imediatamente, pois ele não será exibido novamente. Este será o seu `CLIENT_SECRET`.
+    *   A página irá recarregar e mostrar o segredo. Copie o **valor**. Este será o seu `CLIENT_SECRET`. Também recomendo anotar em algum lugar.
 
-7.  **Configure as Permissões da API:**
+8.  **Configure as Permissões da API:**
     *   No menu à esquerda, vá para **"Permissões da API"**.
     *   Clique em **"+ Adicionar uma permissão"** -> **"Microsoft Graph"** -> **"Permissões delegadas"**.
     *   Na caixa de busca, procure por `Contacts` e marque a permissão **`Contacts.Read`**.
@@ -62,7 +64,7 @@ Para que a autenticação com a Microsoft funcione, você precisa registrar sua 
 
 ## ⚙️ Configuração do Ambiente Local
 
-Siga os passos abaixo para configurar e executar o projeto em seu ambiente de desenvolvimento.
+Após clonar o projeto, siga os passos abaixo para configurar e executar o projeto 
 
 ### 1. Backend (Flask)
 
