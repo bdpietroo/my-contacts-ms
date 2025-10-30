@@ -59,6 +59,7 @@ export default {
 
 <style scoped>
 .contacts-table-container {
+
   margin: 40px auto;
   max-width: 900px;
   font-family: 'Roboto', sans-serif;
@@ -80,7 +81,7 @@ export default {
 }
 
 .contacts-table th {
-  background-color: #1976d2; /* azul Material */
+  background-color: #0ea6c3; /* azul Material */
   color: white;
   font-weight: 500;
   text-align: center; /* títulos centralizados */
@@ -108,7 +109,7 @@ export default {
 }
 
 .contacts-table td:nth-child(2) {
-  text-align: left; /* emails alinhados à esquerda */
+  text-align: left /* emails alinhados à esquerda */
 }
 
 .contacts-table ul {
@@ -121,10 +122,4 @@ export default {
   padding: 4px 0;
 }
 
-.no-contacts {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 16px;
-  color: #777;
-}
 </style>
